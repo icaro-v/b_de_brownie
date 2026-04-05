@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>1080</width><height>720</height></rect></property>
+  <property name="windowTitle"><string>B de Brownie - Gestão</string></property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,3">
+    <item>
+     <widget class="QFrame" name="sidebar">
+      <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item><widget class="QLabel" name="labelLogo"><property name="minimumSize"><size><width>0</width><height>120</height></size></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="text"><string>B de Brownie</string></property><property name="styleSheet"><string notr="true">font-size: 22px; font-weight: 600;</string></property></widget></item>
+       <item><widget class="QFrame" name="card"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="verticalLayout_2"><item><widget class="QLabel" name="totalRevenueTitle"><property name="text"><string>Receita total</string></property></widget></item><item><widget class="QLabel" name="labelReceitaTotal"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+       <item><widget class="QFrame" name="card_2"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="verticalLayout_3"><item><widget class="QLabel" name="totalExpensesTitle"><property name="text"><string>Despesas</string></property></widget></item><item><widget class="QLabel" name="labelDespesasTotais"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+       <item><widget class="QFrame" name="card_3"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="verticalLayout_4"><item><widget class="QLabel" name="netProfitTitle"><property name="text"><string>Lucro líquido</string></property></widget></item><item><widget class="QLabel" name="labelLucroLiquido"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+       <item><spacer name="verticalSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint"><size><width>20</width><height>40</height></size></property></spacer></item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabPosition"><enum>QTabWidget::West</enum></property>
+      <property name="iconSize"><size><width>24</width><height>24</height></size></property>
+      <!-- Resumo -->
+      <widget class="QWidget" name="tabResumo">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>icons/resumo.svg</normaloff>icons/resumo.svg</iconset>
+       </attribute>
+       <attribute name="title"><string/></attribute>
+       <attribute name="toolTip"><string>Resumo</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_cards">
+          <item><widget class="QFrame" name="card_resumo1"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="vl1"><item><widget class="QLabel" name="lblResumoReceita"><property name="text"><string>Receita (mês)</string></property></widget></item><item><widget class="QLabel" name="labelResumoReceitaValor"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+          <item><widget class="QFrame" name="card_resumo2"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="vl2"><item><widget class="QLabel" name="lblResumoDespesas"><property name="text"><string>Despesas (mês)</string></property></widget></item><item><widget class="QLabel" name="labelResumoDespesasValor"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+          <item><widget class="QFrame" name="card_resumo3"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="vl3"><item><widget class="QLabel" name="lblResumoLucro"><property name="text"><string>Lucro líquido</string></property></widget></item><item><widget class="QLabel" name="labelResumoLucroValor"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tabelaRecentes">
+          <column><property name="text"><string>Data</string></property></column>
+          <column><property name="text"><string>Tipo</string></property></column>
+          <column><property name="text"><string>Descrição</string></property></column>
+          <column><property name="text"><string>Valor</string></property></column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <!-- Ingredientes -->
+      <widget class="QWidget" name="tabIngredientes">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>icons/ingredientes.svg</normaloff>icons/ingredientes.svg</iconset>
+       </attribute>
+       <attribute name="title"><string/></attribute>
+       <attribute name="toolTip"><string>Ingredientes</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QFormLayout" name="formLayoutIng" labelAlignment="Qt::AlignRight">
+          <item row="0" column="0"><widget class="QLabel" name="lblIngNome"><property name="text"><string>Nome</string></property></widget></item>
+          <item row="0" column="1"><widget class="QLineEdit" name="campoNomeIngrediente"/></item>
+          <item row="1" column="0"><widget class="QLabel" name="lblIngUnidade"><property name="text"><string>Unidade</string></property></widget></item>
+          <item row="1" column="1"><widget class="QComboBox" name="comboUnidadeIngrediente"><item><property name="text"><string>g</string></property></item><item><property name="text"><string>ml</string></property></item><item><property name="text"><string>un</string></property></item></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="lblIngCusto"><property name="text"><string>Custo por unidade</string></property></widget></item>
+          <item row="2" column="1"><widget class="QDoubleSpinBox" name="spinCustoIngrediente"><property name="maximum"><double>9999.99</double></property><property name="prefix"><string>R$ </string></property><property name="decimals"><number>2</number></property></widget></item>
+          <item row="3" column="0"><widget class="QLabel" name="lblIngObs"><property name="text"><string>Observação</string></property></widget></item>
+          <item row="3" column="1"><widget class="QLineEdit" name="campoObsIngrediente"/></item>
+          <item row="4" column="1"><widget class="QPushButton" name="botaoAdicionarIngrediente"><property name="text"><string>Adicionar ingrediente</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tabelaIngredientes">
+          <column><property name="text"><string>Nome</string></property></column>
+          <column><property name="text"><string>Unidade</string></property></column>
+          <column><property name="text"><string>Custo/un</string></property></column>
+          <column><property name="text"><string>Observação</string></property></column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <!-- Produtos -->
+      <widget class="QWidget" name="tabProdutos">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>icons/produtos.svg</normaloff>icons/produtos.svg</iconset>
+       </attribute>
+       <attribute name="title"><string/></attribute>
+       <attribute name="toolTip"><string>Produtos</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_prod">
+        <item>
+         <layout class="QFormLayout" name="formLayoutProd" labelAlignment="Qt::AlignRight">
+          <item row="0" column="0"><widget class="QLabel" name="lblProdNome"><property name="text"><string>Nome</string></property></widget></item>
+          <item row="0" column="1"><widget class="QLineEdit" name="campoNomeProduto"/></item>
+          <item row="1" column="0"><widget class="QLabel" name="lblProdCat"><property name="text"><string>Categoria</string></property></widget></item>
+          <item row="1" column="1"><widget class="QComboBox" name="comboCategoriaProduto"><item><property name="text"><string>Tradicional</string></property></item><item><property name="text"><string>Recheado</string></property></item><item><property name="text"><string>Outro</string></property></item></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="lblProdPreco"><property name="text"><string>Preço padrão</string></property></widget></item>
+          <item row="2" column="1"><widget class="QDoubleSpinBox" name="spinPrecoProduto"><property name="maximum"><double>9999.99</double></property><property name="prefix"><string>R$ </string></property><property name="decimals"><number>2</number></property></widget></item>
+          <item row="3" column="1"><widget class="QPushButton" name="botaoSalvarProduto"><property name="text"><string>Salvar produto</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tabelaProdutos">
+          <column><property name="text"><string>Nome</string></property></column>
+          <column><property name="text"><string>Categoria</string></property></column>
+          <column><property name="text"><string>Preço padrão</string></property></column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <!-- Tipos de Despesa -->
+      <widget class="QWidget" name="tabTiposDespesa">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>icons/tipos.svg</normaloff>icons/tipos.svg</iconset>
+       </attribute>
+       <attribute name="title"><string/></attribute>
+       <attribute name="toolTip"><string>Tipos de Despesa</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_tipoDesp">
+        <item>
+         <layout class="QFormLayout" name="formLayoutTipoDesp" labelAlignment="Qt::AlignRight">
+          <item row="0" column="0"><widget class="QLabel" name="lblTipoDespNome"><property name="text"><string>Nome</string></property></widget></item>
+          <item row="0" column="1"><widget class="QLineEdit" name="campoNomeTipoDespesa"/></item>
+          <item row="1" column="0"><widget class="QLabel" name="lblTipoDespCat"><property name="text"><string>Categoria</string></property></widget></item>
+          <item row="1" column="1"><widget class="QComboBox" name="comboCategoriaTipoDespesa"><item><property name="text"><string>Ingredientes</string></property></item><item><property name="text"><string>Embalagem</string></property></item><item><property name="text"><string>Marketing</string></property></item><item><property name="text"><string>Entrega</string></property></item><item><property name="text"><string>Outros</string></property></item></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="lblTipoDespValor"><property name="text"><string>Valor padrão</string></property></widget></item>
+          <item row="2" column="1"><widget class="QDoubleSpinBox" name="spinValorTipoDespesa"><property name="prefix"><string>R$ </string></property><property name="maximum"><double>9999.99</double></property><property name="decimals"><number>2</number></property></widget></item>
+          <item row="3" column="1"><widget class="QPushButton" name="botaoSalvarTipoDespesa"><property name="text"><string>Salvar tipo</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tabelaTiposDespesa">
+          <column><property name="text"><string>Nome</string></property></column>
+          <column><property name="text"><string>Categoria</string></property></column>
+          <column><property name="text"><string>Valor padrão</string></property></column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <!-- Vendas -->
+      <widget class="QWidget" name="tabVendas">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>icons/vendas.svg</normaloff>icons/vendas.svg</iconset>
+       </attribute>
+       <attribute name="title"><string/></attribute>
+       <attribute name="toolTip"><string>Vendas</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <layout class="QFormLayout" name="formLayoutVenda" labelAlignment="Qt::AlignRight">
+          <item row="0" column="0"><widget class="QLabel" name="labelData"><property name="text"><string>Data</string></property></widget></item>
+          <item row="0" column="1"><widget class="QDateEdit" name="dataVendaInput"><property name="calendarPopup"><bool>true</bool></property></widget></item>
+          <item row="1" column="0"><widget class="QLabel" name="labelProd"><property name="text"><string>Produto</string></property></widget></item>
+          <item row="1" column="1"><widget class="QComboBox" name="comboProdutoVenda"><property name="editable"><bool>true</bool></property></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="labelQtd"><property name="text"><string>Qtd</string></property></widget></item>
+          <item row="2" column="1"><widget class="QSpinBox" name="spinQtdVenda"><property name="minimum"><number>1</number></property><property name="maximum"><number>9999</number></property></widget></item>
+          <item row="3" column="0"><widget class="QLabel" name="labelPreco"><property name="text"><string>Preço unit.</string></property></widget></item>
+          <item row="3" column="1"><widget class="QDoubleSpinBox" name="spinPrecoVenda"><property name="prefix"><string>R$ </string></property><property name="maximum"><double>9999.99</double></property><property name="decimals"><number>2</number></property></widget></item>
+          <item row="4" column="1"><widget class="QPushButton" name="botaoRegistrarVenda"><property name="text"><string>Registrar venda</string></property></widget></item>
+         </layout>
+        </item>
+        <item><widget class="QTableWidget" name="tabelaVendas">
+          <column><property name="text"><string>Data</string></property></column>
+          <column><property name="text"><string>Produto</string></property></column>
+          <column><property name="text"><string>Qtd</string></property></column>
+          <column><property name="text"><string>Preço unit</string></property></column>
+          <column><property name="text"><string>Total</string></property></column>
+         </widget></item>
+       </layout>
+      </widget>
+      <!-- Despesas -->
+      <widget class="QWidget" name="tabDespesas">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>icons/despesas.svg</normaloff>icons/despesas.svg</iconset>
+       </attribute>
+       <attribute name="title"><string/></attribute>
+       <attribute name="toolTip"><string>Despesas</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <layout class="QFormLayout" name="formLayoutDesp" labelAlignment="Qt::AlignRight">
+          <item row="0" column="0"><widget class="QLabel" name="labelDespData"><property name="text"><string>Data</string></property></widget></item>
+          <item row="0" column="1"><widget class="QDateEdit" name="dataDespesaInput"><property name="calendarPopup"><bool>true</bool></property></widget></item>
+          <item row="1" column="0"><widget class="QLabel" name="labelDespCat"><property name="text"><string>Categoria</string></property></widget></item>
+          <item row="1" column="1"><widget class="QComboBox" name="comboCategoriaDespesa"><item><property name="text"><string>Ingredientes</string></property></item><item><property name="text"><string>Embalagem</string></property></item><item><property name="text"><string>Marketing</string></property></item><item><property name="text"><string>Entrega</string></property></item><item><property name="text"><string>Outros</string></property></item></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="labelDespItem"><property name="text"><string>Item</string></property></widget></item>
+          <item row="2" column="1"><widget class="QComboBox" name="comboItemDespesa"><property name="enabled"><bool>false</bool></property></widget></item>
+          <item row="3" column="0"><widget class="QLabel" name="labelDespObs"><property name="text"><string>Observação</string></property></widget></item>
+          <item row="3" column="1"><widget class="QLineEdit" name="campoObservacaoDespesa"/></item>
+          <item row="4" column="0"><widget class="QLabel" name="labelDespValor"><property name="text"><string>Valor</string></property></widget></item>
+          <item row="4" column="1"><widget class="QDoubleSpinBox" name="spinValorDespesa"><property name="prefix"><string>R$ </string></property><property name="maximum"><double>9999.99</double></property><property name="decimals"><number>2</number></property></widget></item>
+          <item row="5" column="1"><widget class="QPushButton" name="botaoAdicionarDespesa"><property name="text"><string>Adicionar despesa</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tabelaDespesas">
+          <column><property name="text"><string>Data</string></property></column>
+          <column><property name="text"><string>Categoria</string></property></column>
+          <column><property name="text"><string>Item</string></property></column>
+          <column><property name="text"><string>Observação</string></property></column>
+          <column><property name="text"><string>Valor</string></property></column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <!-- Divisão -->
+      <widget class="QWidget" name="tabDivisao">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>icons/divisao.svg</normaloff>icons/divisao.svg</iconset>
+       </attribute>
+       <attribute name="title"><string/></attribute>
+       <attribute name="toolTip"><string>Divisão de Lucro</string></attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <layout class="QFormLayout" name="formLayoutSplit" labelAlignment="Qt::AlignRight">
+          <item row="0" column="0"><widget class="QLabel" name="labelMe"><property name="text"><string>Minha %</string></property></widget></item>
+          <item row="0" column="1"><widget class="QDoubleSpinBox" name="spinMinhaParte"><property name="maximum"><double>100.0</double></property><property name="decimals"><number>1</number></property><property name="suffix"><string> %</string></property><property name="value"><double>33.3</double></property></widget></item>
+          <item row="1" column="0"><widget class="QLabel" name="labelPartner"><property name="text"><string>Namorada %</string></property></widget></item>
+          <item row="1" column="1"><widget class="QDoubleSpinBox" name="spinNamoradaParte"><property name="maximum"><double>100.0</double></property><property name="decimals"><number>1</number></property><property name="suffix"><string> %</string></property><property name="value"><double>33.3</double></property></widget></item>
+          <item row="2" column="0"><widget class="QLabel" name="labelBiz"><property name="text"><string>Negócio %</string></property></widget></item>
+          <item row="2" column="1"><widget class="QDoubleSpinBox" name="spinNegocioParte"><property name="maximum"><double>100.0</double></property><property name="decimals"><number>1</number></property><property name="suffix"><string> %</string></property><property name="value"><double>33.3</double></property></widget></item>
+          <item row="3" column="1"><widget class="QLabel" name="labelSomaDivisao"><property name="text"><string>Divisão fixa: 33,3% para cada</string></property></widget></item>
+          <item row="4" column="1"><widget class="QPushButton" name="botaoSalvarDivisao"><property name="text"><string>Salvar divisão</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutShares">
+          <item><widget class="QFrame" name="card_me"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="vlMe"><item><widget class="QLabel" name="lblShareMe"><property name="text"><string>Minha parte</string></property></widget></item><item><widget class="QLabel" name="labelValorMinhaParte"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+          <item><widget class="QFrame" name="card_partner"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="vlPartner"><item><widget class="QLabel" name="lblSharePartner"><property name="text"><string>Namorada</string></property></widget></item><item><widget class="QLabel" name="labelValorNamorada"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+          <item><widget class="QFrame" name="card_biz"><property name="objectName"><string>card</string></property><layout class="QVBoxLayout" name="vlBiz"><item><widget class="QLabel" name="lblShareBiz"><property name="text"><string>Negócio</string></property></widget></item><item><widget class="QLabel" name="labelValorNegocio"><property name="text"><string>R$ 0,00</string></property><property name="styleSheet"><string notr="true">font-size:18px;font-weight:600;</string></property></widget></item></layout></widget></item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

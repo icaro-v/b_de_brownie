@@ -1,0 +1,101 @@
+﻿:root {
+}
+
+QWidget {
+    background-color: #f7cfe2; /* rosa claro */
+    color: #5c2b2b; /* marrom */
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+QFrame#sidebar {
+    background-color: #f4bed4;
+    border-right: 2px solid #e8a9c2;
+}
+
+QFrame#card {
+    background-color: #ffffff;
+    border: 1px solid #f1b5cc;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+QPushButton {
+    background-color: #7a3b3b;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: #8f4949;
+}
+
+QLineEdit, QDoubleSpinBox, QSpinBox, QComboBox, QDateEdit {
+    background-color: #fff7fb;
+    border: 1px solid #e8a9c2;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+QTabWidget {
+    background: #e3a0c2;
+}
+
+QTabWidget::pane {
+    /* remove linha entre barra e conteúdo */
+    border: none;
+    background: #ffe7f1;
+}
+
+QTabWidget::tab-bar {
+    background: #e3a0c2;
+    border: none;
+}
+
+QTabBar {
+    qproperty-iconSize: 24px 24px;
+}
+
+/* tabs verticais (West) para virar uma barra lateral */
+QTabBar::tab {
+    background: #f4bed4;
+    border: 1px solid #e8a9c2;
+    min-width: 32px;
+    min-height: 32px;
+    margin: 5px 5px;
+    border-radius: 8px;
+    color: #5c2b2b;
+    font-size: 16px;
+    text-align: center;
+}
+
+QTabBar::tab:west {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QTabBar::tab:selected {
+    background: #ffeef6;
+    color: #7a3b3b;
+    border: 1px solid #e8a9c2;
+}
+
+QTabBar::tab:hover {
+    background: #ffd6e6;
+}
+
+QHeaderView::section {
+    background-color: #f4bed4;
+    color: #5c2b2b;
+    padding: 6px;
+    border: none;
+}
+
+QTableWidget {
+    gridline-color: #f1b5cc;
+    selection-background-color: #7a3b3b;
+    selection-color: #ffffff;
+}
